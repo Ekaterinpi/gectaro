@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "74858e10-46f4-48c6-a6c3-3b42de48836c",
+		"name": "Gectaro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31981843"
+	},
+	"item": [
+		{
+			"name": "список всех работ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/84016/tasks?per-page=20&page=1&expand=contractors&filter[is_group]=false&filter[query]=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"84016",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "per-page",
+							"value": "20"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "expand",
+							"value": "contractors"
+						},
+						{
+							"key": "filter[is_group]",
+							"value": "false"
+						},
+						{
+							"key": "filter[query]",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "список отчетов по выполн работам",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/84016/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"84016",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "новый отчет",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656409/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656409",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "без обязательного поля",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656409/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656409",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "без токена авторизации",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656409/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656409",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "несуществующий task-id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/26564099/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"26564099",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "неверный HTTP метод",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656409/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656409",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "неверный формат даты",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": jsdhjsdh\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656425/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656425",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "формат даты 0",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 0\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656425/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656425",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "volume отрицательное число",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093,\n    \"volume\": -90\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656409/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656409",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "volume не в формате integer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ooHYnUzAKojk4IPtnIwlRglIMLg1Abl5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": 1718018093,\n    \"volume\": 20е\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2656409/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2656409",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
